@@ -44,24 +44,11 @@ public class GameService {
         return null;
     }
 
-    public List<Game> getGamesByPlatformId(Integer userId, Integer platformId) {
-        User user = this.userDao.findById(userId).orElse(null);
+    public List<Game> getGamesByPlatformId(Integer platformId) {
         Platform platform = this.platformDao.findById(platformId).orElse(null);
         try {
-            if(platform.getUser().getUserId() == user.getUserId())
-                return this.gameDao.findGamesByUserAndPlatform(user, platform);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public List<Game> getGamesByUserIdAndPlatformId(Integer userId, Integer platformId) {
-        User user = this.userDao.findById(userId).orElse(null);
-        Platform platform = this.platformDao.findById(platformId).orElse(null);
-        try {
-            if(user.getUserId() != null && platform.getPlatformId() != null)
-                return this.gameDao.findGamesByUserAndPlatform(user, platform);
+            if(platform.getPlatformId() != null);
+                return this.gameDao.findGamesByPlatform(platform);
         } catch(Exception e) {
             e.printStackTrace();
         }

@@ -2,7 +2,6 @@ package com.revature.myvideogamecollection.controller;
 
 import com.revature.myvideogamecollection.model.Game;
 import com.revature.myvideogamecollection.model.JsonResponse;
-import com.revature.myvideogamecollection.model.Platform;
 import com.revature.myvideogamecollection.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +30,7 @@ public class GameController {
         return response;
     }
 
-    @GetMapping("game/{userId}")
+    @GetMapping("game/user/{userId}")
     public JsonResponse getGamesByUserId(@PathVariable Integer userId) {
         JsonResponse response;
         List<Game> userGames;
@@ -46,14 +45,14 @@ public class GameController {
         return response;
     }
 
-    @GetMapping("game/{userId}/{platformId}")
-    public JsonResponse getGamesByUserIdAndPlatformId(@PathVariable Integer userId, @PathVariable Integer platformId) {
+    @GetMapping("game/platform/{platformId}")
+    public JsonResponse getGamesByPlatformId(@PathVariable Integer platformId) {
         JsonResponse response;
         List<Game> userGames;
-        userGames = this.gameService.getGamesByPlatformId(userId, platformId);
+        userGames = this.gameService.getGamesByPlatformId(platformId);
         if(userGames != null) {
             if(userGames.size() > 0)
-                response = new JsonResponse(true, "Listing games by user and platform", userGames);
+                response = new JsonResponse(true, "Listing games by user's platform", userGames);
             else
                 response = new JsonResponse(false, "No games found for this user", null);
         } else

@@ -16,7 +16,7 @@ import java.util.List;
 @Transactional
 public interface GameDao extends JpaRepository <Game, Integer> {
     List<Game> findGamesByUser(User user);
-    List<Game> findGamesByUserAndPlatform(User user, Platform platform);
+    List<Game> findGamesByPlatform(Platform platform);
     @Modifying
     @Query("Delete from Game where gameId = :gameId")
     void deleteGame(@Param("gameId") Integer gameId);
