@@ -23,7 +23,14 @@ public class UserController {
 
     @GetMapping("user")
     public JsonResponse getAllUsers() {
-        return new JsonResponse(true, "Listing all users", this.userService.getAllUsers());
+        JsonResponse response;
+        try {
+            response = new JsonResponse(true, "Listing all users", this.userService.getAllUsers());
+        } catch (Exception e) {
+            e.printStackTrace();
+            response = new JsonResponse(false, "An error occurred", null);
+        }
+        return response;
     }
 
     @PostMapping("login")
@@ -127,9 +134,11 @@ public class UserController {
         JsonResponse response;
         User currentUser = (User) session.getAttribute("userInSession");
         if(currentUser != null) {
-            this.userService.deleteUser(currentUser);
-            response = new JsonResponse(true, "Your account was successfully deleted", null);
-            session.setAttribute("userInSession", null);
+            if(this.userService.deleteUser(currentUser)) {
+                response = new JsonResponse(true, "Your account was successfully deleted", null);
+                session.setAttribute("userInSession", null);
+            } else
+                response = new JsonResponse(false, "An error occurred", null);
         }
         else
             response = new JsonResponse(false, "User not logged in", null);

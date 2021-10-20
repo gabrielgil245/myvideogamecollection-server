@@ -40,8 +40,16 @@ public class UserService {
         return this.userDao.save(user);
     }
 
-    public void deleteUser(User user) {
-        this.userDao.delete(user);
+    public Boolean deleteUser(User user) {
+        Boolean success;
+        try {
+            this.userDao.delete(user);
+            success = true;
+        } catch(Exception e) {
+            e.printStackTrace();
+            success = false;
+        }
+        return success;
     }
 
 }

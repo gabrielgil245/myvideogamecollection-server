@@ -15,7 +15,7 @@ public class Platform {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="platform_id")
-    private Integer privateId;
+    private Integer platformId;
     @Column(name = "platform_name", nullable = false)
     private String platformName;
     @Column(name = "platform_username")
