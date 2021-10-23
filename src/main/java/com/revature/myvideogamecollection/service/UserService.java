@@ -20,8 +20,9 @@ public class UserService {
         return this.userDao.findAll();
     }
 
-    public User getUserByUsername(String username) {
-        return this.userDao.findUserByUsername(username);
+    // NEEDS PASSWORD DECRYPTION
+    public User getUserByUsernameAndPassword(String username, String password) {
+        return this.userDao.findUserByUsernameAndPassword(username, password);
     }
 
     public User getUserByEmail(String email) {

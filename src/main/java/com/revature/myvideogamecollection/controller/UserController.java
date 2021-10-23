@@ -36,7 +36,7 @@ public class UserController {
     @PostMapping("login")
     public JsonResponse login(HttpSession session, @RequestBody User user) {
         JsonResponse response;
-        User existingUser = this.userService.getUserByUsername(user.getUsername());
+        User existingUser = this.userService.getUserByUsernameAndPassword(user.getUsername(), user.getPassword());
         if(existingUser != null) { //NEEDS PASSWORD DECRYPTION
             session.setAttribute("userInSession", existingUser); //CONSIDER JWTs
             response = new JsonResponse(true, "Log in successful", existingUser);
