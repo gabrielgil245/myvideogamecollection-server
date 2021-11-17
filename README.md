@@ -21,24 +21,24 @@ My Video Game Collection Web Platform/Frontend: https://github.com/gabrielgil245
 - Register.
 - Login/Logout.
 - Reset their password (using an email feature).
-- Modify their information.
-- Upload a profile picture (using AWS: S3).
-- Search other people.
 - Add Game Platforms.
   - Add/assign video games to a platform.
-  - Assign a status to a game: Not Started, In Progress, Beat, Complete, Dropped
+  - Assign a status to a game: Not Started, In Progress, On-Hold, Dropped, Finished, Completed
 - View their own profile.
   - Including their consoles and games.
 - View others’ profile.
   - Including their consoles and games.
 
 Todo-List:
-- Add uploading a profile picture
-- Add Email Encryption
 - Add JSON Web Tokens
+- Modify their profile information.
+- Search other people.
+- Upload a profile picture (using AWS: S3).
+- Add Email Encryption
+- Deploy with Docker
 
 ## Getting Started
-- git clone https://github.com/gabrielgil245/myvideogamecollection
+- git clone https://github.com/gabrielgil245/myvideogamecollection-server
 - Create a relational database called "myvideogamecollection".
 - List of environment variables:
   - AWS_DATABASE_URI - Relational Database Host Name.
