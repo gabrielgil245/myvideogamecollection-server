@@ -3,14 +3,15 @@ package com.gabrielgil.myvideogamecollection.controller;
 import com.gabrielgil.myvideogamecollection.model.JsonResponse;
 import com.gabrielgil.myvideogamecollection.model.Platform;
 import com.gabrielgil.myvideogamecollection.service.PlatformService;
+import com.gabrielgil.myvideogamecollection.utility.CrossOriginUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController("platformController")
-@RequestMapping(value="api")
-@CrossOrigin(value=CrossOriginUtil.CROSS_ORIGIN_VALUE, allowCredentials = "true")
+@RequestMapping(value = "api")
+@CrossOrigin(value = CrossOriginUtil.CROSS_ORIGIN_VALUE, allowCredentials = "true")
 public class PlatformController {
     PlatformService platformService;
 

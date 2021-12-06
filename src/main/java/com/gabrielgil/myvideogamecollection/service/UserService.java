@@ -31,14 +31,41 @@ public class UserService {
 
     public User createUser(User user) {
         User existingUser = this.userDao.findUserByUsername(user.getUsername());
-        if(existingUser != null) return null;
+        if(existingUser != null)
+            return null;
         existingUser = this.userDao.findUserByEmail(user.getEmail());
-        if(existingUser != null) return null;
+        if(existingUser != null)
+            return null;
         return this.userDao.save(user);
     }
 
     public User editUser(User user) {
-        return this.userDao.save(user);
+        User currentUser = this.userDao.findById(user.getUserId()).orElse(null);
+        if(currentUser == null)
+            return null;
+        else { // User exists
+            if(user.getUsername() != null)
+                currentUser.setUsername(user.getUsername());
+            if(user.getPassword() != null && user.getPassword().length() >= 8)
+                currentUser.setPassword(user.getPassword());
+            if(user.getFirstName() != null)
+                currentUser.setFirstName(user.getFirstName());
+            if(user.getLastName() != null)
+                currentUser.setLastName(user.getLastName());
+            if(user.getEmail() != null)
+                currentUser.setEmail(user.getEmail());
+            if(user.getBirthday() != null)
+                currentUser.setBirthday(user.getBirthday());
+            if(user.getAboutMe() != null)
+                currentUser.setAboutMe(user.getAboutMe());
+            if(user.getProfilePic() != null)
+                currentUser.setProfilePic(user.getProfilePic());
+        }
+        return this.userDao.save(currentUser);
+    }
+
+    public User findUserById(Integer userId) {
+        return this.userDao.findById(userId).orElse(null);
     }
 
     public Boolean deleteUser(User user) {
@@ -46,11 +73,10 @@ public class UserService {
         try {
             this.userDao.delete(user);
             success = true;
-        } catch(Exception e) {
-            e.printStackTrace();
+        } catch(Exception exception) {
+            exception.printStackTrace();
             success = false;
         }
         return success;
     }
-
 }
