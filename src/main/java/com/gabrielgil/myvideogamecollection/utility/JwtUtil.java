@@ -28,6 +28,18 @@ public class JwtUtil {
         return null;
     }
 
+    // Fourth of the time permitted to reset user's password
+    public String generateResetPasswordToken(Integer userId) {
+        try {
+            return JWT.create().withClaim("userId", userId)
+                    .withExpiresAt(new Date(System.currentTimeMillis() + (time / 4)))
+                    .sign(algorithm);
+        } catch(JWTCreationException jwtCreationException) {
+            jwtCreationException.printStackTrace();
+        }
+        return null;
+    }
+
     public DecodedJWT verify(String token) {
         try {
             return jwtVerifier.verify(token);
