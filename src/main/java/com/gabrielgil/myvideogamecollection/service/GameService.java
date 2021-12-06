@@ -1,11 +1,11 @@
-package com.revature.myvideogamecollection.service;
+package com.gabrielgil.myvideogamecollection.service;
 
-import com.revature.myvideogamecollection.model.Game;
-import com.revature.myvideogamecollection.model.Platform;
-import com.revature.myvideogamecollection.model.User;
-import com.revature.myvideogamecollection.repository.GameDao;
-import com.revature.myvideogamecollection.repository.PlatformDao;
-import com.revature.myvideogamecollection.repository.UserDao;
+import com.gabrielgil.myvideogamecollection.model.Game;
+import com.gabrielgil.myvideogamecollection.model.Platform;
+import com.gabrielgil.myvideogamecollection.model.User;
+import com.gabrielgil.myvideogamecollection.repository.GameDao;
+import com.gabrielgil.myvideogamecollection.repository.PlatformDao;
+import com.gabrielgil.myvideogamecollection.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

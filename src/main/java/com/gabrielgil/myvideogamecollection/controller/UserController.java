@@ -1,14 +1,12 @@
-package com.revature.myvideogamecollection.controller;
+package com.gabrielgil.myvideogamecollection.controller;
 
-import com.revature.myvideogamecollection.model.JsonResponse;
-import com.revature.myvideogamecollection.model.User;
-import com.revature.myvideogamecollection.service.UserService;
+import com.gabrielgil.myvideogamecollection.model.JsonResponse;
+import com.gabrielgil.myvideogamecollection.model.User;
+import com.gabrielgil.myvideogamecollection.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import javax.websocket.server.PathParam;
-import java.util.List;
 
 @RestController("userController")
 @RequestMapping(value="api")

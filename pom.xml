@@ -8,7 +8,7 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.revature</groupId>
+	<groupId>com.gabrielgil</groupId>
 	<artifactId>myvideogamecollection</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>myvideogamecollection</name>
@@ -71,6 +71,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>myvideogamecollection-server</finalName>
 	</build>
 
 </project>

@@ -1,8 +1,8 @@
-package com.revature.myvideogamecollection.repository;
+package com.gabrielgil.myvideogamecollection.repository;
 
-import com.revature.myvideogamecollection.model.Game;
-import com.revature.myvideogamecollection.model.Platform;
-import com.revature.myvideogamecollection.model.User;
+import com.gabrielgil.myvideogamecollection.model.Game;
+import com.gabrielgil.myvideogamecollection.model.Platform;
+import com.gabrielgil.myvideogamecollection.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

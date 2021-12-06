@@ -1,9 +1,8 @@
-package com.revature.myvideogamecollection.controller;
+package com.gabrielgil.myvideogamecollection.controller;
 
-import com.revature.myvideogamecollection.model.JsonResponse;
-import com.revature.myvideogamecollection.model.Platform;
-import com.revature.myvideogamecollection.model.User;
-import com.revature.myvideogamecollection.service.PlatformService;
+import com.gabrielgil.myvideogamecollection.model.JsonResponse;
+import com.gabrielgil.myvideogamecollection.model.Platform;
+import com.gabrielgil.myvideogamecollection.service.PlatformService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

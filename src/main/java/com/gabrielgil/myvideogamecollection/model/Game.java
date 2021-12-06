@@ -1,4 +1,4 @@
-package com.revature.myvideogamecollection.model;
+package com.gabrielgil.myvideogamecollection.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

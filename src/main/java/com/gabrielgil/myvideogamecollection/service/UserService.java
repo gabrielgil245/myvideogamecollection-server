@@ -1,7 +1,7 @@
-package com.revature.myvideogamecollection.service;
+package com.gabrielgil.myvideogamecollection.service;
 
-import com.revature.myvideogamecollection.model.User;
-import com.revature.myvideogamecollection.repository.UserDao;
+import com.gabrielgil.myvideogamecollection.model.User;
+import com.gabrielgil.myvideogamecollection.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
