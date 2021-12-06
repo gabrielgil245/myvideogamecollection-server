@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 h2testing
 env.list
+src/main/java/com/gabrielgil/myvideogamecollection/utility/CrossOriginUtil.java
 
 ### STS ###
 .apt_generated
