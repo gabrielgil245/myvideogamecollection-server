@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 h2testing
 env.list
+h2dev
 
 ### STS ###
 .apt_generated
