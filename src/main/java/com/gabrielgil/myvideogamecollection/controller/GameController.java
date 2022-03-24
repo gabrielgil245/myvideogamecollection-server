@@ -3,7 +3,7 @@ package com.gabrielgil.myvideogamecollection.controller;
 import com.gabrielgil.myvideogamecollection.model.Game;
 import com.gabrielgil.myvideogamecollection.model.JsonResponse;
 import com.gabrielgil.myvideogamecollection.service.GameService;
-import com.gabrielgil.myvideogamecollection.utility.CrossOriginUtil;
+import com.gabrielgil.myvideogamecollection.utility.SharedUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController("gameController")
 @RequestMapping(value = "api")
-@CrossOrigin(value = CrossOriginUtil.CROSS_ORIGIN_VALUE, allowCredentials = "true")
+@CrossOrigin(value = SharedUtil.CROSS_ORIGIN_VALUE, allowCredentials = "true")
 public class GameController {
     GameService gameService;
 

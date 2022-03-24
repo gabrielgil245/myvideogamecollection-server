@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Component("jwtUtil")
 public class JwtUtil {
-    public static final Algorithm algorithm = Algorithm.HMAC256(CrossOriginUtil.SECRET_TOKEN);
+    public static final Algorithm algorithm = Algorithm.HMAC256(SharedUtil.SECRET_TOKEN);
     public static final JWTVerifier jwtVerifier = JWT.require(algorithm).build();
     // 1000 milliseconds (1 second), 60 seconds (1 minute), 60 minutes (1 hour)
     public static final Integer time = 1000 * 60 * 60;
